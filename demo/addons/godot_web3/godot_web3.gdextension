@@ -1,0 +1,11 @@
+[configuration]
+entry_symbol = "web3_library_init"
+compatibility_minimum = "4.1"
+
+[libraries]
+windows.debug.x86_64 = "res://addons/godot_web3/bin/godot_web3_windows_template_debug_x86_64.dll"
+windows.release.x86_64 = "res://addons/godot_web3/bin/godot_web3_windows_template_release_x86_64.dll"
+linux.debug.x86_64 = "res://addons/godot_web3/bin/godot_web3_linux_template_debug_x86_64.so"
+linux.release.x86_64 = "res://addons/godot_web3/bin/godot_web3_linux_template_release_x86_64.so"
+macos.debug = "res://addons/godot_web3/bin/godot_web3_macos_template_debug.framework"
+macos.release = "res://addons/godot_web3/bin/godot_web3_macos_template_release.framework"

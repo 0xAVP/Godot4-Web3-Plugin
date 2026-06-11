@@ -1,0 +1,252 @@
+{
+  "_format": "godot-web3-v1",
+  "contractName": "World",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes4",
+          "name": "selector",
+          "type": "bytes4"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "impl",
+          "type": "address"
+        }
+      ],
+      "name": "FeatureUpgraded",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "_selectors",
+          "type": "bytes4[]"
+        },
+        {
+          "internalType": "address",
+          "name": "_impl",
+          "type": "address"
+        }
+      ],
+      "name": "addFeature",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "godot_signature": "addFeature(bytes4[],address)",
+      "godot_output_types": [],
+      "godot_output_names": []
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "name": "selectorToImpl",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "godot_signature": "selectorToImpl(bytes4)",
+      "godot_output_types": [
+        "address"
+      ],
+      "godot_output_names": [
+        ""
+      ]
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "int32",
+          "name": "q",
+          "type": "int32"
+        },
+        {
+          "indexed": true,
+          "internalType": "int32",
+          "name": "r",
+          "type": "int32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "seed",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "discoverer",
+          "type": "address"
+        }
+      ],
+      "name": "ChunkExplored",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int32",
+          "name": "q",
+          "type": "int32"
+        },
+        {
+          "internalType": "int32",
+          "name": "r",
+          "type": "int32"
+        }
+      ],
+      "name": "explore",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "int16",
+              "name": "biome",
+              "type": "int16"
+            },
+            {
+              "internalType": "uint8",
+              "name": "resource",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "isWalkable",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct CellData",
+          "name": "data",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "godot_signature": "explore(int32,int32)",
+      "godot_output_types": [
+        "(int16,uint8,bool)"
+      ],
+      "godot_output_names": [
+        [
+          "biome",
+          "resource",
+          "isWalkable"
+        ]
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int32",
+          "name": "q",
+          "type": "int32"
+        },
+        {
+          "internalType": "int32",
+          "name": "r",
+          "type": "int32"
+        }
+      ],
+      "name": "getChunkData",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "int16",
+              "name": "biome",
+              "type": "int16"
+            },
+            {
+              "internalType": "uint8",
+              "name": "resource",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "isWalkable",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct CellData",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "godot_signature": "getChunkData(int32,int32)",
+      "godot_output_types": [
+        "(int16,uint8,bool)"
+      ],
+      "godot_output_names": [
+        [
+          "biome",
+          "resource",
+          "isWalkable"
+        ]
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int32",
+          "name": "q",
+          "type": "int32"
+        },
+        {
+          "internalType": "int32",
+          "name": "r",
+          "type": "int32"
+        }
+      ],
+      "name": "getChunkSeed",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "godot_signature": "getChunkSeed(int32,int32)",
+      "godot_output_types": [
+        "uint256"
+      ],
+      "godot_output_names": [
+        ""
+      ]
+    }
+  ],
+  "generatedAt": "2026-02-09T10:57:10.706Z"
+}

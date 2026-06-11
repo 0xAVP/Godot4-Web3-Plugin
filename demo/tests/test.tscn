@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b6vf1aji6dy38"]
+
+[ext_resource type="Script" uid="uid://bhs1dvpawkh15" path="res://tests/runner.gd" id="1_njov2"]
+[ext_resource type="Script" uid="uid://cq58il25018mg" path="res://addons/godot_web3/nodes/eth_account.gd" id="3_2au82"]
+[ext_resource type="Script" uid="uid://bclwmi62drdfi" path="res://addons/godot_web3/nodes/eth_contract.gd" id="4_8tn2x"]
+[ext_resource type="Script" uid="uid://7fb8iwmti5wg" path="res://addons/godot_web3/nodes/eth_wallet.gd" id="5_aq4fw"]
+[ext_resource type="Script" uid="uid://bvu5phypb6fn7" path="res://addons/godot_web3/nodes/eth_client.gd" id="6_ivycn"]
+[ext_resource type="Script" uid="uid://bmriqptwyobuj" path="res://addons/godot_web3/nodes/eth_relayer.gd" id="6_uofsi"]
+
+[node name="TestRunner" type="Node" unique_id=1640134603]
+script = ExtResource("1_njov2")
+suite_to_run = 2
+
+[node name="EthAccount" type="Node" parent="." unique_id=1779895923]
+script = ExtResource("3_2au82")
+client_path = NodePath("../EthClient")
+wallet_path = NodePath("../EthWallet")
+metadata/_custom_type_script = "uid://cq58il25018mg"
+
+[node name="EthContract" type="Node" parent="." unique_id=1456015464]
+script = ExtResource("4_8tn2x")
+manifest_path = "res://tests/abi/Glued.json"
+contract_address = "0x4200000000000000000000000000000000000006"
+client_path = NodePath("../EthClient")
+account_path = NodePath("../EthAccount")
+metadata/_custom_type_script = "uid://bclwmi62drdfi"
+
+[node name="EthClient" type="Node" parent="." unique_id=993145321]
+script = ExtResource("6_ivycn")
+chain_id = 84532
+rpc_nodes = Array[String](["https://base-sepolia.infura.io/v3/4aa4d838e9ce41beab99f63089155f48", "wss://base-sepolia.infura.io/ws/v3/4aa4d838e9ce41beab99f63089155f48"])
+request_timeout = 3.0
+verbose_logs = true
+metadata/_custom_type_script = "uid://bvu5phypb6fn7"
+
+[node name="EthWallet" type="Node" parent="." unique_id=1120686693]
+script = ExtResource("5_aq4fw")
+iterations = 4
+metadata/_custom_type_script = "uid://7fb8iwmti5wg"
+
+[node name="EthRelayer" type="Node" parent="." unique_id=1015202688]
+script = ExtResource("6_uofsi")
+metadata/_custom_type_script = "uid://bmriqptwyobuj"
