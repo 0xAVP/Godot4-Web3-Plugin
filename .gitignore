@@ -1,0 +1,19 @@
+# Кэш Godot
+.godot/
+.import/
+*.translation
+
+# Файлы сборки GDExtension
+bin/
+build/
+.sconsign.dblite
+*.o
+*.os
+*.obj
+*.a
+*.lib
+
+# Временные файлы редакторов
+.vscode/
+.idea/
+*.user
